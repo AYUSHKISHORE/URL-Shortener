@@ -27,7 +27,7 @@ func panicOnError(err error) {
 // Creating the shorturl
 func CreateUrl(response http.ResponseWriter, request *http.Request) {
 	response.Header().Set("content-type", "application/json")
-	client, err := aero.NewClient("172.28.128.3", 3000)
+	client, err := aero.NewClient("Enter your Ip", 3000)
 	panicOnError(err)
 
 	//making the unique hashids for detecting the each url uniquely
@@ -66,7 +66,7 @@ func GetUrl(response http.ResponseWriter, request *http.Request) {
 	id := string(params.Get("longurl"))
 	var aurl shoterUrllink
 
-	client, err := aero.NewClient("172.28.128.3", 3000)
+	client, err := aero.NewClient("Enter your ip", 3000)
 	panicOnError(err)
 	spolicy := aero.NewScanPolicy()
 	spolicy.ConcurrentNodes = true
@@ -107,7 +107,7 @@ func RootEndpoint(response http.ResponseWriter, request *http.Request) {
 	response.Header().Set("content-type", "text/html")
 	params := mux.Vars(request)
 	id := params["id"]
-	client, err := aero.NewClient("172.28.128.3", 3000)
+	client, err := aero.NewClient("Enter your Ip", 3000)
 	panicOnError(err)
 	// Finding the key (here id is the key)
 	key, err := aero.NewKey("test", "urlsho", id)
