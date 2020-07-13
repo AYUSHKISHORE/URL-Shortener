@@ -1,0 +1,4 @@
+[GET]  http://localhost:12345/allurls ---for getting all urls
+[POST] http://localhost:12345/generate --- for generating shorturl
+[GET] http://localhost:12345/{_id} ---for directing longurl website
+[GET] http://localhost:12345/getshorturl?longurl=http://www.instagram.com  --- for getting shorturl
